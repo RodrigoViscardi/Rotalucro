@@ -234,6 +234,35 @@ fun HomeScreen() {
             }
         }
 
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = AmareloCorrida.copy(alpha = 0.15f)
+            )
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(
+                    text = "Xiaomi / HyperOS",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = AmareloCorrida
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Se aparecer \"Acesso negado\" ao ativar, siga:",
+                    style = MaterialTheme.typography.bodySmall
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "1. Configs > Apps > Gerenciar apps > Lucro na Rota\n2. Outras permissoes > Ativar \"Exibir janela pop-up\"\n3. Volte na Acessibilidade e ative o servico\n\nSe ainda negar:\nConfigs > Ajustes adicionais > Opcoes dev\n> Desativar \"Otimizacao MIUI\" (reinicia)",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+
         Spacer(modifier = Modifier.height(32.dp))
     }
 }
