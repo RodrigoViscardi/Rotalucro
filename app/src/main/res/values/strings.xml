@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lucro na Rota</string>
+    <string name="google_maps_key">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
+    <string name="accessibility_service_description">O Lucro na Rota usa este servico para ler os dados das ofertas de corrida exibidos na tela (valor, distancia, tempo) e mostrar se a corrida vale a pena. Nenhum dado pessoal e coletado. Processamento 100% local.</string>
+
+    <string name="tab_home">Inicio</string>
+    <string name="tab_jornada">Jornada</string>
+    <string name="tab_custos">Custos</string>
+    <string name="tab_dashboard">Dashboard</string>
+    <string name="tab_distribuicao">Distribuicao</string>
+    <string name="tab_metas">Metas</string>
+    <string name="tab_mapa">Mapa de Calor</string>
+
+    <string name="iniciar_jornada">Iniciar Jornada</string>
+    <string name="pausar_jornada">Pausar</string>
+    <string name="retomar_jornada">Retomar</string>
+    <string name="finalizar_jornada">Finalizar Jornada</string>
+    <string name="km_inicial">KM Inicial</string>
+    <string name="km_final">KM Final</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="excluir">Excluir</string>
+    <string name="status_rodando">Rodando</string>
+    <string name="status_pausado">Pausado</string>
+    <string name="status_finalizado">Finalizado</string>
+    <string name="status_parado">Parado</string>
+
+    <string name="corrida_verde">Corrida boa! Acima da sua meta.</string>
+    <string name="corrida_amarela">Atencao! Corrida dentro da media.</string>
+    <string name="corrida_vermelha">Evitar! Corrida abaixo do custo.</string>
+
+    <string name="custo_fixo">Custo Fixo</string>
+    <string name="custo_variavel">Custovariavel</string>
+    <string name="custo_por_km">Custo por KM</string>
+    <string name="adicionar_custo">Adicionar Custo</string>
+    <string name="adicionar_abastecimento">Adicionar Abastecimento</string>
+
+    <string name="meta_diaria">Meta Diaria</string>
+    <string name="meta_mensal">Meta Mensal</string>
+    <string name="lucro_liquido">Lucro Liquido</string>
+    <string name="faturamento">Faturamento</string>
+    <string name="r_por_km">R$/km</string>
+    <string name="r_por_hora">R$/h</string>
+    <string name="km_rodados">KM Rodados</string>
+    <string name="tempo_liquido">Tempo Liquido</string>
+
+    <string name="semaforo_title">Semafaro de Corridas</string>
+    <string name="semaforo_desc">Ative o servico de acessibilidade para analisar corridas em tempo real</string>
+    <string name="ativar_semaforo">Ativar Semafaro</string>
+    <string name="semaforo_ativo">Semafaro Ativo</string>
+    <string name="semaforo_inativo">Semafaro Inativo</string>
+
+    <string name="calculadora_titulo">Calculadora Vale a Pena?</string>
+    <string name="input_valor">Valor da Corrida (R$)</string>
+    <string name="input_distancia">Distancia (km)</string>
+    <string name="input_tempo">Tempo (min)</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado_vale">VALE A PENA</string>
+    <string name="resultado_n_vale">NAO VALE A PENA</string>
+
+    <string name="distribuicao_title">Distribuicao Diaria</string>
+    <string name="receita_uber">Uber</string>
+    <string name="receita_99">99</string>
+    <string name="receita_indrive">inDrive</string>
+    <string name="receita_outros">Outros</string>
+
+    <string name="mapa_calor_title">Mapa de Calor</string>
+    <string name="filtro_horario">Filtrar por horario</string>
+    <string name="filtro_dia">Filtrar por dia</string>
+    <string name="ir_para_zona">Ir para Zona Quente</string>
+
+    <string name="onboarding_welcome">Bem-vindo ao Lucro na Rota</string>
+    <string name="onboarding_desc_1">Descubra em tempo real se cada corrida vale a pena antes de aceitar.</string>
+    <string name="onboarding_desc_2">Saiba exatamente quanto voce lucra por km e por hora.</string>
+    <string name="onboarding_desc_3">Veja onde estao as melhores corridas na sua cidade.</string>
+    <string name="onboarding_start">Comecar</string>
+
+    <string name="camera_secreta">Camera Secreta</string>
+    <string name="camera_secreta_desc">Grava automaticamente ao aceitar uma corrida</string>
+    <string name="compartilhar_local">Compartilhar Localizacao</string>
+    <string name="botao_emergencia">Botao de Emergencia</string>
+    <string name="editar">Editar</string>
+    <string name="valor">Valor</string>
+    <string name="data">Data</string>
+    <string name="historico">Historico</string>
+    <string name="nenhum_registro">Nenhum registro encontrado</string>
+    <string name="total">Total</string>
+    <string name="media">Media</string>
+    <string name="projecao">Projecao</string>
+    <string name="configurar_meta">Configurar Meta</string>
+
+    <string name="notification_channel_jornada">Jornada</string>
+    <string name="notification_channel_captura">Captura de Corridas</string>
+    <string name="notification_jornada_ativa">Jornada ativa - Lucro na Rota</string>
+</resources>
