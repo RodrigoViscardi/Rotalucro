@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lucro na Rota</string>
-    <string name="google_maps_key">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
     <string name="accessibility_service_description">O Lucro na Rota usa este servico para ler os dados das ofertas de corrida exibidos na tela (valor, distancia, tempo) e mostrar se a corrida vale a pena. Nenhum dado pessoal e coletado. Processamento 100% local.</string>
 
     <string name="tab_home">Inicio</string>
@@ -10,7 +9,6 @@
     <string name="tab_dashboard">Dashboard</string>
     <string name="tab_distribuicao">Distribuicao</string>
     <string name="tab_metas">Metas</string>
-    <string name="tab_mapa">Mapa de Calor</string>
 
     <string name="iniciar_jornada">Iniciar Jornada</string>
     <string name="pausar_jornada">Pausar</string>

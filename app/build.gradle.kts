@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
-    id("com.google.gms.google-services")
+    // id("com.google.gms.google-services") // Descomente quando tiver o google-services.json
 }
 
 android {
@@ -98,12 +98,6 @@ dependencies {
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.10.0")
 
-    // Google Maps
-    implementation("com.google.maps.android:maps-utils-ktx:5.1.0")
-    implementation("com.google.maps.android:android-maps-utils:3.9.0")
-    implementation("com.google.android.gms:play-services-maps:19.0.0")
-    implementation("com.google.android.gms:play-services-location:21.3.0")
-
     // Coil (images)
     implementation("io.coil-kt:coil-compose:2.7.0")
 
@@ -111,12 +105,12 @@ dependencies {
     implementation("com.patrykandpatrick.vico:core:2.0.0-beta.2")
     implementation("com.patrykandpatrick.vico:compose-m3:2.0.0-beta.2")
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-crashlytics-ktx")
-    implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
+    // Firebase (descomente quando tiver google-services.json)
+    // implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    // implementation("com.google.firebase:firebase-analytics-ktx")
+    // implementation("com.google.firebase:firebase-crashlytics-ktx")
+    // implementation("com.google.firebase:firebase-auth-ktx")
+    // implementation("com.google.firebase:firebase-firestore-ktx")
 
     // Permission
     implementation("com.google.accompanist:accompanist-permissions:0.36.0")

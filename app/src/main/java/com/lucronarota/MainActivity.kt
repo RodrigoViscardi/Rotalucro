@@ -16,8 +16,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.lucronarota.ui.navigation.AppNavigation
 import com.lucronarota.ui.theme.LucroNaRotaTheme
 import com.lucronarota.service.captura.CapturaCorridaService
@@ -26,8 +24,6 @@ import com.lucronarota.service.jornada.JornadaService
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
-
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -40,8 +36,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         setupPermissions()
         startJornadaService()

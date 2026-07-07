@@ -23,23 +23,6 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Create google-services.json
-        env:
-          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: |
-          if [ -n "$GOOGLE_SERVICES_JSON" ]; then
-            echo "$GOOGLE_SERVICES_JSON" > app/google-services.json
-          fi
-
-      - name: Inject Google Maps API Key
-        env:
-          MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
-        run: |
-          if [ -n "$MAPS_API_KEY" ]; then
-            sed -i "s|YOUR_GOOGLE_MAPS_API_KEY_HERE|$MAPS_API_KEY|g" \
-              app/src/main/res/values/strings.xml
-          fi
-
       - name: Grant execute permission
         run: chmod +x gradlew
 

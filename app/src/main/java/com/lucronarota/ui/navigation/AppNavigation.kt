@@ -18,7 +18,6 @@ import com.lucronarota.ui.screens.custos.CustosScreen
 import com.lucronarota.ui.screens.dashboard.DashboardScreen
 import com.lucronarota.ui.screens.distribuicao.DistribuicaoScreen
 import com.lucronarota.ui.screens.metas.MetasScreen
-import com.lucronarota.ui.screens.mapacalor.MapaCalorScreen
 import com.lucronarota.ui.screens.home.HomeScreen
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
@@ -28,7 +27,6 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     data object Dashboard : Screen("dashboard", "Dashboard", Icons.Filled.BarChart)
     data object Distribuicao : Screen("distribuicao", "Distribuicao", Icons.Filled.PieChart)
     data object Metas : Screen("metas", "Metas", Icons.Filled.TrackChanges)
-    data object MapaCalor : Screen("mapacalor", "Mapa", Icons.Filled.Map)
 }
 
 val bottomScreens = listOf(
@@ -36,7 +34,6 @@ val bottomScreens = listOf(
     Screen.Jornada,
     Screen.Custos,
     Screen.Dashboard,
-    Screen.MapaCalor
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,9 +42,6 @@ fun AppNavigation() {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
-    val currentScreen = bottomScreens.find { screen ->
-        currentDestination?.hierarchy?.any { it.route == screen.route } == true
-    }
 
     Scaffold(
         bottomBar = {
@@ -82,7 +76,6 @@ fun AppNavigation() {
             composable(Screen.Dashboard.route) { DashboardScreen() }
             composable(Screen.Distribuicao.route) { DistribuicaoScreen() }
             composable(Screen.Metas.route) { MetasScreen() }
-            composable(Screen.MapaCalor.route) { MapaCalorScreen() }
         }
     }
 }
