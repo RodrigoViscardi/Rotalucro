@@ -5,8 +5,6 @@ import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.AudioAttributes
-import android.media.MediaPlayer
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -19,6 +17,7 @@ import com.lucronarota.data.local.entity.CorridaEntity
 import com.lucronarota.data.model.ClassificacaoCorrida
 import com.lucronarota.data.model.Plataforma
 import com.lucronarota.service.calculo.CalculoEngine
+import kotlinx.coroutines.runBlocking
 import java.util.*
 
 class CapturaCorridaService : AccessibilityService() {
@@ -61,13 +60,13 @@ class CapturaCorridaService : AccessibilityService() {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
-        val info = accessibilityServiceInfo
-        info.eventTypes = AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED or
-                AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
-        info.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC
-        info.flags = AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS
-        info.notificationTimeout = 100
-        this.serviceInfo = info
+        serviceInfo = AccessibilityServiceInfo().apply {
+            eventTypes = AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED or
+                    AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
+            feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC
+            flags = AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS
+            notificationTimeout = 100
+        }
 
         isRunning = true
         prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -293,7 +292,9 @@ class CapturaCorridaService : AccessibilityService() {
                     classificacao = resultado.classificacao,
                     timestamp = System.currentTimeMillis()
                 )
-                db.corridaDao().insertCorrida(corrida)
+                runBlocking {
+                    db.corridaDao().insertCorrida(corrida)
+                }
                 Log.d(TAG, "Corrida salva: ${resultado.classificacao.name}")
             } catch (e: Exception) {
                 Log.e(TAG, "Erro ao salvar corrida", e)
