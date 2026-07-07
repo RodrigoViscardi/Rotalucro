@@ -244,22 +244,79 @@ fun HomeScreen() {
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
-                    text = "Xiaomi / HyperOS",
+                    text = "Xiaomi / HyperOS — Nao deixe o app ser bloqueado",
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
                     color = AmareloCorrida
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Se aparecer \"Acesso negado\" ao ativar, siga:",
-                    style = MaterialTheme.typography.bodySmall
+                    text = "1. Ative o servico de acessibilidade",
+                    style = MaterialTheme.typography.bodySmall,
+                    fontWeight = FontWeight.Bold
                 )
-                Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "1. Configs > Apps > Gerenciar apps > Lucro na Rota\n2. Outras permissoes > Ativar \"Exibir janela pop-up\"\n3. Volte na Acessibilidade e ative o servico\n\nSe ainda negar:\nConfigs > Ajustes adicionais > Opcoes dev\n> Desativar \"Otimizacao MIUI\" (reinicia)",
+                    text = "Se der \"Acesso negado\": Apps > Gerenciar apps > Lucro na Rota > Outras permissoes > Ativar \"Exibir janela pop-up\". Depois volte e ative.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedButton(
+                    onClick = {
+                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                        intent.data = android.net.Uri.parse("package:${context.packageName}")
+                        context.startActivity(intent)
+                    }
+                ) {
+                    Icon(Icons.Filled.PermDeviceInformation, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Abrir Permissoes do App")
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = "2. Desative a otimizacao de bateria",
+                    style = MaterialTheme.typography.bodySmall,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = "Isso impede o sistema de matar o app em segundo plano.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedButton(
+                    onClick = {
+                        val intent = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+                        context.startActivity(intent)
+                    }
+                ) {
+                    Icon(Icons.Filled.BatterySaver, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Otimizacao de Bateria")
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = "3. Permita sobrepor outros apps (overlay)",
+                    style = MaterialTheme.typography.bodySmall,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = "Necessario para mostrar o semaforo sobre o Uber/99.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedButton(
+                    onClick = {
+                        val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
+                        intent.data = android.net.Uri.parse("package:${context.packageName}")
+                        context.startActivity(intent)
+                    }
+                ) {
+                    Icon(Icons.Filled.Layers, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Permissao de Sobreposicao")
+                }
             }
         }
 
